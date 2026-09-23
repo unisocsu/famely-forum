@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: famely-forum
+    runtime: docker
+    plan: free
+    healthCheckPath: /
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: database__client
+        value: mongo
+      - key: database__host
+        sync: false
+      - key: database__port
+        value: "27017"
+      - key: database__username
+        sync: false
+      - key: database__password
+        sync: false
+      - key: database__database
+        value: nodebb
